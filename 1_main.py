@@ -13,12 +13,12 @@ try:
 except ZeroDivisionError:
     print("Nie możesz dzielić przez 0")
 
-#podanie wyjątku jeszcze dalej do obsługi przy uzyciu raise
-# try:
-#     dzielenie(2,0)
-# except ZeroDivisionError:
-#     print("Nie możesz dzielić przez 0")
-#     raise
+# podanie wyjątku jeszcze dalej do obsługi przy uzyciu raise
+try:
+    dzielenie(2,0)
+except ZeroDivisionError:
+    print("Nie możesz dzielić przez 0")
+    raise
 
 print("-------------")
 #Asercja
@@ -29,7 +29,7 @@ def dzielenie(x,y):
     print(x/y)
 
 dzielenie(3, 1)
-# dzielenie(3, 0)
+dzielenie(3, 0)
 
 
 print("--------")
@@ -46,3 +46,12 @@ except ZeroDivisionError:
     print("Nie można dzielić przez zero")
 
 
+# przykład z asercja i typem danych
+def pobierz_dane(nazwa):
+    assert isinstance(nazwa, str), "Podany argument nie jest tekstowy"
+    return nazwa
+
+try:
+    print(pobierz_dane(4))
+except:
+    print("Błąd danych")
